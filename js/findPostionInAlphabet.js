@@ -1,7 +1,12 @@
 function position(letter){
-    let test = "0abcdefghijklmonpqrstuvwxyz"
+    let test = "0abcdefghijklmnopqrstuvwxyz"
     let  alphabet = test.split('')
-return  alphabet
+    for (let i = 0; i < alphabet.length; i++) {
+        if (letter == alphabet[i]){
+            return i
+        }
+    }
+
 }
 
-console.log(position('a'))
+console.log(position('e'))
