@@ -43,5 +43,19 @@ function isValidIpP(str){
     }
 
 }
-let test1 = '59.0.176.00'
-console.log(isValidIpP(test1))
+function  validIpRefactor(str){
+    const  ip = str.split(".") //converts the string to an array which is seperated by the "."
+    console.log(ip[3])
+    console.log(String(Number(ip[3])))
+    return (ip.length === 4) && // checks to see if the arrays'  length is 4
+        ip.reduce((acc , ip) => //checks all the elements in the array with acc being the last one and ip the current one ex : ip[0], ip[1]
+            (acc === true)&& //checks to see if the last  element was true
+            (String(Number(ip)) === ip) && // checks to see nothing is wrong with the current element like space or leading zeros
+            (Number(ip) >= 0) && // checks if the number of the current element is greater than zero
+            (Number(ip) <= 255) // checks if the number of the current element is less than 255
+        ,true)
+}
+let test1= '0.0.0.0'
+let test2 = '59.0.176.00'
+// console.log(isValidIpP(test1))
+console.log(validIpRefactor(test2))
