@@ -1,12 +1,13 @@
 function count(string){
    let strArray = string.split("")
+    let count ={}
 
-    console.log(strArray.filter(checkSame));
-    console.log(strArray)
+strArray.forEach(function (x){
+    count[x] = (count[x] || 0)+1
+})
+    return count
 }
-function checkSame(str){
-    return str === str
-}
+
 test1 ="aba"
 test2 = ""
 count(test1)
